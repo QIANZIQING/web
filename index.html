@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>钱子卿的博客</title>
+	<style>
+		*{
+			margin : 0;
+			padding : 0;
+		}
+		a{
+			text-decoration: none;
+		}
+		li{
+			list-style: none;
+		}
+		.clearfix::after{
+			content: "";
+			height: 0;
+			display: block;
+			clear: both;
+		}
+		#pos{
+			position: fixed;
+			bottom: 20px;
+			right: 20px;
+			width: 200px;
+			height: 200px;
+		}
+		#header{
+			width: 1200px;
+			height: 100px;
+			margin: 0 auto;
+			position: relative;
+			
+		}
+		#header .txt{
+			float: left;
+			width: 240px;
+			height: 30px;
+			padding: 5px;
+			font-size: 14px;
+			margin-top:25px ;
+			
+		}
+		.txt::placeholder{
+			color: #32b16c;
+		}
+		#header .search{
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			top:27px;
+			left: 213px;
+		}
+		#header .search:hover{
+			cursor: pointer;
+			outline: solid 1px #32B16C;
+		}
+		#header li{
+			float: left;
+			width: 150px;
+			height: 80px;
+			margin-top: 10px;
+			line-height: 80px;
+			text-align: center;
+			font-size: 20px;
+		}
+		#header li:hover{
+			border-bottom: #fea837 solid 3px;
+			cursor: pointer;
+			
+		}
+		#header li a{
+			color: #211f1c;
+		}
+		#header li:hover a{
+			color: #ca3017;
+		}
+		#main{
+			width: 100%;
+			height: 1200px;
+			background-color: lightblue;
+			margin: 0 auto;
+			background-size: 100% 100%;
+			color: #211F1C;
+		}
+		#main .top{
+			width: 1200px;
+			height: 340px;
+			margin: 0 auto;
+		}
+		#main .top .logo{
+			width: 300px;
+			height: 300px;
+			float: left;
+			margin-top: 20px;
+			margin-left: 200px;
+		}
+		#main .top .form{
+			width: 300px;
+			height: 260px;
+			float: right;
+			margin-top: 20px;
+			margin-right: 220px;
+			background-color: #ffcdd3;
+		}
+		#main .top .txt{
+			margin-top: 30px;
+			width: 260px;
+			height: 40px;
+			margin-left: 10px;
+		}
+		#main .top .word{
+			width: 200px;
+			height: 50px;
+			text-align: center;
+			line-height: 50px;
+			font-size: 23px;
+			background-color: aqua;
+			margin: 0 auto;
+			margin-top: 20px;
+		}
+		#main .top .word:hover{
+			background-color: #32b16c;
+			color: #CA3017;
+			cursor: pointer;
+		}
+		#center{
+			
+			width: 1200px;
+			height: 800px;
+			margin: 0 auto;
+			margin-top: 30px ;
+		}
+		#center .left{
+			width: 900px;
+			height: 800px;
+			background-color: #32B16C;
+			border-radius: 40px;
+			float: left;
+			
+		}
+		#center .one{
+			width: 900px;
+			height: 200px;
+		}
+		#center .one .the-left{
+			width: 120px;
+			height: 150px;
+			float: left;
+			margin-top: 25px;
+			margin-left: 15px;
+		}
+		#center .one .the-right{
+			width: 700px;
+			height: 150px;
+			float: left;
+			margin-top: 25px;
+			margin-left: 15px;
+			text-indent: 2em;
+			color: white;
+			line-height: 30px;
+		}
+		#center .right{
+			width: 260px;
+			height: 800px;
+			float: left;
+			margin-left: 25px;
+		}
+		#center .right .top{
+			width: 260px;
+			height: 50px;
+			line-height: 50px;
+			font-size: 23px;
+			text-align: center;
+			float: left;
+			margin-top: 18px;
+		}
+		#center .right .word{
+			width: 180px;
+			height: 40px;
+			line-height: 40px;
+			font-size: 18px;
+			padding-left: 80px;
+			float: left;
+			margin-top: 8px;
+		}
+		#center .right .word-two{
+			width: 180px;
+			height: 40px;
+			line-height: 40px;
+			font-size: 18px;
+			padding-left: 80px;
+			float: left;
+			margin-top: 8px;
+		}
+		#center .right .word:hover{
+			color: aquamarine;
+			background-color: #32B16C;
+			cursor: pointer;
+		}
+		#center .right .word-two:hover{
+			color: aquamarine;
+			background-color: #32B16C;
+			cursor: pointer;
+		}
+		#banner{
+			
+			width: 1200px;
+			height: 600px;
+			background-color: lightblue;
+			background-image: url(img/banner.jpg);
+			background-size: 100% 100%;
+			margin: 0 auto;
+		}
+		#banner .the-left{
+			width: 100px;
+			height: 100px;
+			line-height: 80px;
+			text-align: center;
+			font-size: 100px;
+			float: left;
+			margin-top: 180px;
+			margin-left: 20px;
+			font-weight: 900;
+			color: #32B16C;
+		}
+		#banner .the-right{
+			width: 100px;
+			height: 100px;
+			line-height: 80px;
+			text-align: center;
+			font-size: 100px;
+			float: right;
+			margin-top: 180px;
+			margin-right: 20px;
+			font-weight: 900;
+			color: #32B16C;
+		}
+		#banner .the-left:hover{
+			cursor: pointer;
+			color: #CA3017;
+		}
+		#banner .the-right:hover{
+			cursor: pointer;
+			color: #CA3017;
+		}
+		#ani{
+			width: 100%;
+			height: 500px;
+			background: url(img/bg.webp);
+			padding-top: 300px ;
+		}
+		#cen{
+			width: 800px;
+			height: 240px;
+			margin: 0 auto;
+			position: relative;
+		}
+		#ani .men1{
+			width: 200px;
+			height: 180px;
+			background-image: url(img/men1.png);
+			background-position-y:bottom;
+			background-repeat: no-repeat;
+			position: absolute;
+			animation: men 1.5s steps(8) infinite;
+			left: 0;
+			top: 28px;
+		}
+		#ani .men2{
+			width: 200px;
+			height: 180px;
+			position: absolute;
+			background-position-y:center ;
+			background-image: url(img/men2.png);
+			background-repeat: no-repeat;
+			animation: men 1.5s steps(8) infinite;
+			left: 200px;
+			top: 28px;
+		}
+		#ani .men3{
+			width: 180px;
+			position: absolute;
+			height: 200px;
+			background-image: url(img/men3.png);
+			background-repeat: no-repeat;
+			animation: men2 1.5s steps(8) infinite;
+			left: 400px;
+		}
+		#ani .men4{
+			width: 200px;
+			height: 180px;
+			position: absolute;
+			background-position-y:center ;
+			background-image: url(img/men4.png);
+			background-repeat: no-repeat;
+			animation: men3 1.5s steps(8) infinite;
+			left: 600px;
+			top:32px;
+		}
+		@keyframes men{
+			0%{
+				background-position-x:0px ;
+			}
+			100%{
+				 background-position-x:-1600px ;
+			}
+		}
+		@keyframes men2{
+			0%{
+				background-position-x:0px ;
+			}
+			100%{
+				 background-position-x:-1360px ;
+			}
+		}
+		@keyframes men3{
+			0%{
+				background-position-x:0px ;
+			}
+			100%{
+				 background-position-x:-1680px ;
+			}
+		}
+		#footer{
+			width: 100%;
+			height: 220px;
+			
+		}
+		#footer .center{
+			width: 1200px;
+			height: 220px;
+			margin: 0 auto;
+		}
+		#footer .word{
+			width: 300px;
+			float: left;
+			height: 150px;
+			margin-left: 200px;
+			margin-top: 20px;
+			
+		}
+		#footer .word .top{
+			width: 300px;
+			height: 40px;
+			line-height: 40px;
+			text-align: left;
+			font-size: 20px;
+			color: #211F1C;
+		}
+		#footer .word .bottom{
+			width: 300px;
+			height: 35px;
+			line-height: 30px;
+			text-align: left;
+			font-size: 18px;
+			color: #211F1C;
+		}
+		#footer .qq{
+			width: 50px;
+			height: 50px;
+			float: left;
+			margin-top: 100px;
+			position: relative;
+			cursor: pointer;
+			background: url(img/qq.png) no-repeat;
+			background-size: 100% 100%;
+		}
+		#footer .qq:hover .qq-img{
+			display: block;
+			cursor: pointer;
+		}
+		#footer .qq:hover{
+			background: url(img/qq2.png) no-repeat;
+			background-size: 100% 100%;
+		}
+		#footer .qq-img{
+			position: absolute;
+			top: -220px;
+			left: -70px;
+			display: none;
+		}
+		#footer .wx-img{
+			position: absolute;
+			top:-216px;
+			right: -80px;
+			display: none;
+		}
+		#footer .wx{
+			width: 50px;
+			height: 55px;
+			float: left;
+			margin-top: 95px;
+			margin-left: 80px;
+			position: relative;
+			cursor: pointer;
+			background: url(img/wx.png) no-repeat;
+			background-size: 100% 100%;
+		}
+		#footer .wx:hover .wx-img{
+			display: block;
+		}
+		#footer .wx:hover{
+			background: url(img/wx2.png) no-repeat;
+			background-size: 100% 100%;
+		}
+	</style>
+</head>
+<body>
+	<div id = "pos">
+		<img width="200px" height="200px" src="img/定位.png" />
+	</div>
+	<div id = "header" class="clearfix">
+		<form>
+		    <input type="text" class="txt" placeholder="输入内容">
+			<div class = "search">
+				<img width="40px" height="40px" src="img/搜索.png" >
+			</div>
+		</form>
+		<ul class="clearfix">
+			<li><a href= "#">网站首页</a></li>
+			<li><a href= "#">个人动态</a></li>
+			<li><a href= "#">学习界面</a></li>
+			<li><a href= "#">最新新闻</a></li>
+			<li><a href= "#">社区互动</a></li>
+			<li><a href= "#">网站分享</a></li>
+		</ul>
+	</div>
+	<div id = "main">
+		<div class = "top clearfix">
+			<div class = "logo">
+				<img width="300px" height="300px" src="./img/logo.png" >
+			</div>
+			<div class = "form">
+				<input type="text" class= "txt" placeholder="手机号">
+				<input type="password" class = "txt" name="mm" placeholder="密码" />
+				<div class = "word">
+					登录
+				</div>
+			</div>
+		</div>
+		<div id = "center" class="clearfix">
+			<div class = "left">
+				<div class = "one">
+					<div class = "the-left">
+						<img width="120px" height="150px" src="./img/1-1.png" >
+					</div>
+					<div class = "the-right">
+						《深入理解Java虚拟机:JVM高级特性与最佳实践》内容简介：作为一位Java程序员，你是否也曾经想深入理解Java虚拟机，但是却被它的复杂和深奥拒之门外？没关系，本书极尽化繁为简之妙，能带领你在轻松中领略Java虚拟机的奥秘。本书是近年来国内出版的唯一一本与Java虚拟机相关的专著，也是唯一一本同时从核心理论和实际运用这两个角度去探讨Java虚拟机的著作，不仅理论分析得透彻，而且书中包含的典型案例和最佳实践也极具现实指导意义。
+					</div>
+				</div>
+				<div class = "one">
+					<div class = "the-left">
+						<img width="120px" height="150px" src="./img/1-2.png" >
+					</div>
+					<div class = "the-right">
+						本书赢得了全球程序员的广泛赞誉，即使是最晦涩的概念，在Bruce Eckel的文字亲和力和小而直接的编程示例面前也会化解于无形。从Java的基础语法到最高级特性（深入的面向对象概念、多线程、自动项目构建、单元测试和调试等），本书都能逐步指导你轻松掌握。
+					</div>
+				</div>
+				<div class = "one">
+					<div class = "the-left">
+						<img width="120px" height="150px" src="./img/1-3.png" >
+					</div>
+					<div class = "the-right">
+						本书介绍了在Java编程中78条极具实用价值的经验规则，这些经验规则涵盖了大多数开发人员每天所面临的问题的解决方案。通过对Java平台设计专家所使用的技术的全面描述，揭示了应该做什么，不应该做什么才能产生清晰、健壮和高效的代码。
+						
+						本书中的每条规则都以简短、独立的小文章形式出现，并通过例子代码加以进一步说明。本书内容全面，结构清晰，讲解详细。可作为技术人员的参考用书。
+					</div>
+				</div>
+				<div class = "one">
+					<div class = "the-left">
+						<img width="120px" height="150px" src="./img/1-4.png" >
+					</div>
+					<div class = "the-right">
+						《Head First Java》是本完整的面向对象（object-oriented，OO）程序设计和Java的学习指导。此书是根据学习理论所设计的，让你可以从学习程序语言的基础开始一直到包括线程、网络与分布式程序等项目。最重要的，你会学会如何像个面向对象开发者一样去思考。
+						
+						而且不只是读死书，你还会玩游戏、拼图、解谜题以及以意想不到的方式与Java交互。在这些活动中，你会写出一堆真正的Java程序，包括了一个船舰炮战游戏和一个网络聊天程序。
+					</div>
+				</div>
+			</div>
+			<div class = "right"> 
+				<div class = "top">
+					热门电影
+				</div>
+				<div class = "word">
+					1.复仇者联盟4
+				</div>
+				<div class = "word">
+					2.我不是药神
+				</div>
+				<div class = "word">
+					3.何以为家
+				</div>
+				<div class = "word">
+					4.绿皮书
+				</div>
+				<div class = "word">
+					5.邪不压正
+				</div>
+				<div class = "word">
+					6.我和我的祖国
+				</div>
+				<div class = "word">
+					7.唐人街探案
+				</div>
+				
+				<div class = "word">
+					8.飞驰人生
+				</div>
+				<div class = "word">
+					9.无问西东
+				</div>
+				<div class = "top">
+					热门电视剧
+				</div>
+				<div class = "word-two">
+					1.天醒之路
+				</div>
+				<div class = "word-two">
+					2.全世界最好的你
+				</div>
+				<div class = "word-two">
+					3.我是余欢水
+				</div>
+				<div class = "word-two">
+					4.鬓边不是海棠红
+				</div>
+			</div>
+		</div>
+		<div class = "content">
+			
+		</div>
+	</div>
+	<div id = "banner">
+		<div class = "the-left"><</div>
+		<div class = "the-right">></div>
+	</div>
+	<div id = "ani">
+		<div id = "cen" class = "clearfix">
+			<div class = "men1"></div>
+			<div class = "men2"></div>
+			<div class = "men3"></div>
+			<div class = "men4"></div>
+		</div>
+		<div id = "footer">
+			<div class = "center">
+				<div class = "word">
+					<div class = "top">
+						个人信息
+					</div>
+					<div class = "bottom">
+						QQ:2771379003
+					</div>
+					<div class = "bottom">
+						WX:15633806985
+					</div>
+					<div class = "bottom">
+						版权声明
+					</div>
+				</div>
+				<div class = "qq">
+					<div class = "qq-img">
+						<img width = "200px"  height = "200px" src="img/qq二维码.jpg" >
+					</div>
+				</div>
+				<div class = "wx">
+					<div class = "wx-img">
+						<img width="200px" height="200px" src="img/微信二维码.jpg" >
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
